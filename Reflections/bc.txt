@@ -1,0 +1,14 @@
+GENERATING BIONOMIAL CO-EFFICIENTS:
+
+Approach 1: Generate a dynamic 2D matrics of size (n*k).
+-Space occupied would be (n*k)
+
+Approach 2: Use of recursion with n,k as input to function
+-Space occupied would be (2^k)
+-Preferable if the code requires only one or two queries of bionomial coefficient.
+-For repeated queries, maintaining a table would be more efficient.
+
+Approach 3: Maintaing a 1D array of coefficients.
+-Space occupied would be (k+1).
+-Computationally inexpensive compared to recursion,also does not save unnecessary values.
+-Most suitable in case of one or two queries.

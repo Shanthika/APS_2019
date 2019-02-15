@@ -18,8 +18,10 @@ int main(){
 	s2=strlen(str2);
 	int counter[s1+1][s2+1];
 
-	memset(counter[0],0,(s2+1)*sizeof(counter[0]));
-
+	memset(counter[0],0,(s2+1)*sizeof(counter[0][0]));
+	for(int i=0;i<s1+1;i++){
+		counter[i][0]=0;
+	}
 
 	for(int i=1;i<s1+1;i++){
 		for(int j=1;j<s2+1;j++){
@@ -28,7 +30,14 @@ int main(){
 			}
 			else counter[i][j]=max(counter[i-1][j],counter[i][j-1]);
 		}
+		for(int m=0;m<s1+1;m++){
+			for(int n=0;n<s2+1;n++)
+				printf("%d ",counter[m][n]);
+			printf("\n");
+		}
+
 	}
 	printf("%d\n",counter[s1][s2]);
+
 
 }

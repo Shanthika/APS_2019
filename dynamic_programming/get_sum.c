@@ -16,19 +16,17 @@ int main(){
 	for(int i=0;i<n;i++)
 		scanf("%d",&a[i]);
 	
-	int k=0;
+	int j=0,i;
 	memset(counter,0,(sum+1)*sizeof(counter[0]));
 	counter[0]=1;
-	for(int i=0;i<n;i++){
-		k=a[i];
-		for(int j=0;k<sum+1;j++){
-			counter[k]=counter[k]+counter[j];
-			k++;
-		
-		}
-		
-	}
-	printf("%d\n",counter[sum]);
+	for(int k=0;k<n;k++){
+        i=a[k];
+        for(j=0;i<sum+1;j++){
+            counter[i]+=counter[j];
+            i++;
+        }
+    }
 
+	printf("%d\n",counter[sum]);
 
 }
